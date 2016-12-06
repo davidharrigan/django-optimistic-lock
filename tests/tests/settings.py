@@ -6,7 +6,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.admin',
     'django.contrib.staticfiles',
-    'tests',
+    'tests.tests',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -23,7 +23,7 @@ DATABASES = {
     }
 }
 
-ROOT_URLCONF = 'tests.urls'
+ROOT_URLCONF = 'tests.tests.urls'
 
 STATIC_URL = '/static/'
 DEBUG = True

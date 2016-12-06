@@ -1,11 +1,16 @@
 TESTS=tests
-SETTINGS=tests.sqlite_settings
+SETTINGS=tests.tests.sqlite_settings
+COVERAGE=coverage
+
 
 test:
-	cd tests && DJANGO_SETTINGS_MODULE=$(SETTINGS) $(COVERAGE_COMMAND) ./manage.py test $(TESTS) --verbosity=2
+	DJANGO_SETTINGS_MODULE=${SETTINGS} python setup.py test
 
 coverage:
-	+make test COVERAGE_COMMAND='coverage run --source=ool --branch'
-	cd tests && coverage html
+	DJANGO_SETTINGS_MODULE=${SETTINGS} ${COVERAGE} run --source="./ool" setup.py test
+	${COVERAGE} report
 
 .PHONY: test
+
+clean:
+	rm -rf dist build *.egg-info .eggs/;

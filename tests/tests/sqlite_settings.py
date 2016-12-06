@@ -1,10 +1,10 @@
 from __future__ import absolute_import
 
-from tests.settings import *
+from .settings import *  # noqa
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '',
+        'NAME': 'test_db',
     }
 }

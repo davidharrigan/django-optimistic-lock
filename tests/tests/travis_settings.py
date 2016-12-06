@@ -1,13 +1,13 @@
 from __future__ import absolute_import
 import os
 
-from tests.settings import *
+from .settings import *  # noqa
 
 if os.environ['DB'] == 'sqlite':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': '',
+            'NAME': 'test_db',
         }
     }
 else:
