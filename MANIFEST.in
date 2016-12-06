@@ -2,4 +2,3 @@ recursive-include tests *.py
 recursive-include tests/templates/ *.html
 include .travis.yml
 include requirements/base.txt
-include README.rst
